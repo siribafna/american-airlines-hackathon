@@ -7,6 +7,7 @@ import com.improving.util.FlightConnectionHelper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,8 +29,15 @@ public class FlightBusinessService {
 
         List<Flight> flights = flightClient.getFlights(date);
         List<Intinery> intineries = new FlightConnectionHelper().getLongestFlight(origin, destination, date, flights);
+        Collections.sort(intineries, (a,b)->{
+            return b.getTotalTime() - a.getTotalTime();
+        });
 
+        List<Intinery> newItenList = new LinkedList<Intinery>();
+        for(int i = 0; i < 3; i++) {
+            newItenList.add(intineries.get(i));
+        }
 
-        return intineries;
+        return newItenList;
     }
 }

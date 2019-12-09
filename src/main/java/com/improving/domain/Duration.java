@@ -28,4 +28,9 @@ public class Duration {
     public void setMinutes(int minutes) {
         this.minutes = minutes;
     }
+
+    public int getTotalTime(){
+        int total = minutes + ((60) *hours);
+        return (int) total;
+    }
 }

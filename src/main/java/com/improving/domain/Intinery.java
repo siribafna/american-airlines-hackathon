@@ -13,4 +13,12 @@ public class Intinery {
     public void setListOfFlights(List<Flight> listOfFlights) {
         this.listOfFlights = listOfFlights;
     }
+
+    public int getTotalTime(){
+        int totalTime = 0;
+        for(Flight f: listOfFlights){
+            totalTime += f.getDuration().getTotalTime();
+        }
+        return totalTime;
+    }
 }
