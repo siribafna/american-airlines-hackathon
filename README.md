@@ -7,3 +7,6 @@ https://github.com/EmilyStacy-droid/flight-booking
 
 ## Heroku Datasource: (For Today)
 https://aa-flight-engine-hack.herokuapp.com/flights?date=2019-10-09
+
+## Example Usage
+https://localhost:8080/flights?origin=DFW&destination=ORD&date=2019-09-10
